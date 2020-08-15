@@ -1,0 +1,47 @@
+.instructions {
+  position: absolute;
+  min-height: 95vh;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  background-color: hsl(204, 77%, 26%);
+  text-align: center;
+  width: 300px;
+  padding: 20px 10px;
+  transform: translateX(-320px);
+  transition: all 0.5s ease-in-out;
+}
+
+.instructions.show {
+  transform: translateX(0);
+}
+
+.close {
+  background: transparent;
+  color: white;
+  font-weight: bolder;
+  font-size: 20px;
+  text-align: right;
+  margin-left: 200px;
+  border: none;
+  cursor: pointer;
+}
+
+.instruct {
+  padding: 10px 20px;
+  background: #0f4c75;
+  color: whitesmoke;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.instruct:focus {
+  outline: none;
+  position: relative;
+  top: 5px;
+  box-shadow: none;
+}
