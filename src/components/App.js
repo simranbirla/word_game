@@ -9,7 +9,6 @@ const App = () => {
       <Instruction />
       <Difficulty />
       <Word />
-      <Time />
     </div>
   );
 };
