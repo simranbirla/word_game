@@ -1,25 +1,19 @@
 import React, { useState, useRef } from "react";
+import local from "./localStorage";
 
-const local = () => {
-  if (localStorage.getItem("level")) {
-    return localStorage.getItem("level");
-  } else {
-    localStorage.setItem("level", "easy");
-    return localStorage.getItem("level");
-  }
-};
-
-const Difficulty = () => {
+const Difficulty = (props) => {
   const [level, setLevel] = useState(local());
   const selectRef = useRef(local());
 
   window.onload = () => {
     selectRef.current.value = local();
+    props.setdifficulty(local());
   };
 
   const changeLevel = (e) => {
     setLevel(e.target.value);
     localStorage.setItem("level", e.target.value);
+    props.setdifficulty(e.target.value);
   };
 
   return (

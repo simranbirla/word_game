@@ -16,6 +16,9 @@ const Input = (props) => {
   };
 
   useEffect(() => {
+    if (time <= 0) {
+      setTime(0);
+    }
     const interval = setInterval(() => {
       setTime(time - 1);
     }, 1000);
@@ -24,15 +27,23 @@ const Input = (props) => {
     };
   }, [time]);
 
-  return (
-    <>
-      <label>
-        Type the word here:
-        <input type="text" onChange={(e) => changeWord(e)} ref={inputRef} />
-      </label>
-      <p>Time left:{time}</p>
-    </>
-  );
+  const displayElements = () => {
+    if (time > 0) {
+      return (
+        <>
+          <label>
+            Type the word here:
+            <input type="text" onChange={(e) => changeWord(e)} ref={inputRef} />
+          </label>
+          <p>Time left:{time}</p>
+        </>
+      );
+    } else {
+      return <div>Game over</div>;
+    }
+  };
+
+  return <div>{displayElements()}</div>;
 };
 
 export default Input;
