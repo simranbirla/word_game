@@ -20,7 +20,7 @@ const randomWord = () => {
   return words_arr[num];
 };
 
-const Word = () => {
+const Word = (props) => {
   const [random, setRandom] = useState(randomWord());
 
   return (
@@ -30,6 +30,7 @@ const Word = () => {
         <Input
           random_word={random}
           setRandomWord={() => setRandom(randomWord())}
+          level={props.level}
         />
       </div>
     </div>

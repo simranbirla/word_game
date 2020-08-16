@@ -11,7 +11,7 @@ const App = () => {
     <div>
       <Instruction />
       <Difficulty setdifficulty={setdifficulty} difficulty={difficulty} />
-      <Word />
+      <Word level={difficulty} />
     </div>
   );
 };

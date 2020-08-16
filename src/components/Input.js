@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const Input = (props) => {
   const inputRef = useRef("");
@@ -9,7 +8,13 @@ const Input = (props) => {
     if (e.target.value === props.random_word) {
       console.log(true);
       inputRef.current.value = "";
-      setTime(time + 2);
+      if (props.level === "easy") {
+        setTime(time + 5);
+      } else if (props.level === "medium") {
+        setTime(time + 3);
+      } else {
+        setTime(time + 2);
+      }
       props.setRandomWord();
       return true;
     }
