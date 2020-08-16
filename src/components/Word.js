@@ -27,7 +27,10 @@ const Word = () => {
     <div>
       Here A word will come ::{random}
       <div>
-        <Input random_word={random} />
+        <Input
+          random_word={random}
+          setRandomWord={() => setRandom(randomWord())}
+        />
       </div>
     </div>
   );
