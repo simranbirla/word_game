@@ -11,10 +11,12 @@
   transform: translateX(-320px);
   transition: all 0.5s ease-in-out;
   color: aliceblue;
+  z-index: 2;
 }
 
 .instructions.show {
   transform: translateX(0);
+  z-index: 2;
 }
 
 .close {
@@ -38,6 +40,7 @@
   box-shadow: 0 5px rgba(0, 0, 0, 0.6);
   cursor: pointer;
   margin-top: 20px;
+  z-index: 2;
 }
 
 .instruct:focus {

@@ -3,10 +3,11 @@ import { useState, useEffect } from "react";
 
 const Input = (props) => {
   const inputRef = useRef("");
+  const [score, setScore] = useState(0);
   const [time, setTime] = useState(10);
   const changeWord = (e) => {
     if (e.target.value === props.random_word) {
-      console.log(true);
+      setScore(score + 1);
       inputRef.current.value = "";
       if (props.level === "easy") {
         setTime(time + 5);
@@ -35,16 +36,40 @@ const Input = (props) => {
   const displayElements = () => {
     if (time > 0) {
       return (
-        <>
-          <label>
-            Type the word here:
-            <input type="text" onChange={(e) => changeWord(e)} ref={inputRef} />
-          </label>
-          <p>Time left:{time}</p>
-        </>
+        <div className="input-container">
+          <label>Type the word here:</label>
+          <p>
+            <input
+              className="input"
+              type="text"
+              onChange={(e) => changeWord(e)}
+              ref={inputRef}
+              placeholder="Word"
+            />
+          </p>
+          <div className="scores">
+            <p>
+              <i className="fas fa-stopwatch" /> Time left:{time}
+            </p>
+            <p>Score : {score}</p>
+          </div>
+        </div>
       );
     } else {
-      return <div>Game over</div>;
+      return (
+        <div className="game-over">
+          Game over
+          <p className="score">Score is {score}</p>
+          <button
+            onClick={() => {
+              window.location.reload();
+            }}
+            className="again"
+          >
+            Play Again
+          </button>
+        </div>
+      );
     }
   };
 

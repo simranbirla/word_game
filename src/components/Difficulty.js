@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import local from "./localStorage";
-
+import "../Style/Difficulty.css";
 const Difficulty = (props) => {
   const [level, setLevel] = useState(local());
   const selectRef = useRef(local());
@@ -17,7 +17,7 @@ const Difficulty = (props) => {
   };
 
   return (
-    <div style={{ margin: "auto" }}>
+    <div className="level">
       <label style={{ margin: "20px auto", textAlign: "center" }}>
         Choose a difficulty level:
         <select onChange={(e) => changeLevel(e)} ref={selectRef}>
