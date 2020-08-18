@@ -6,7 +6,6 @@ import local from "./localStorage";
 
 const App = () => {
   const [difficulty, setdifficulty] = useState(local());
-  console.log(difficulty);
   return (
     <div>
       <Instruction />
