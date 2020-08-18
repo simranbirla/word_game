@@ -50,7 +50,7 @@
   box-shadow: none;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .instructions {
     width: 200px;
     height: 100vh;
