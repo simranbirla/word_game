@@ -10,3 +10,7 @@ body {
     rgba(0, 154, 239, 1) 98%
   );
 }
+
+* {
+  box-sizing: border-box;
+}

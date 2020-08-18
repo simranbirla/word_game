@@ -23,3 +23,15 @@
 .level select:focus {
   outline: none;
 }
+
+@media (max-width: 500px) {
+  .level {
+    font-size: 1.1em;
+  }
+
+  .level select {
+    width: 80px;
+    padding: 5px;
+    margin: 0;
+  }
+}

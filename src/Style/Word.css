@@ -27,8 +27,7 @@
 
 .input {
   padding: 10px 20px;
-  width: 100%;
-  min-width: 400px;
+  width: 300px;
   height: 30px;
   border: none;
   border-radius: 10px;
@@ -69,4 +68,14 @@
 .again:hover {
   opacity: 1;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 500px) {
+  .word-container {
+    margin-top: 40px;
+  }
+
+  .input {
+    width: 100%;
+  }
 }

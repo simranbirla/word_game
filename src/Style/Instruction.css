@@ -49,3 +49,16 @@
   top: 5px;
   box-shadow: none;
 }
+
+@media (max-width: 500px) {
+  .instructions {
+    width: 200px;
+    height: 100vh;
+    overflow: auto;
+    transform: translateX(-220px);
+  }
+
+  .close {
+    margin-left: 100px;
+  }
+}
