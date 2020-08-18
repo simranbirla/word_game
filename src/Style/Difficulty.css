@@ -27,6 +27,8 @@
 @media (max-width: 700px) {
   .level {
     font-size: 1.1em;
+    text-align: left;
+    justify-content: space-between;
   }
 
   .level select {
