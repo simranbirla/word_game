@@ -6,7 +6,8 @@ const Difficulty = (props) => {
   const selectRef = useRef(local());
 
   window.onload = () => {
-    selectRef.current.value = local();
+    selectRef.current = local();
+    //console.log(selectRef.current);
     props.setdifficulty(local());
   };
 

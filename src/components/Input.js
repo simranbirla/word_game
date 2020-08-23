@@ -5,6 +5,7 @@ const Input = (props) => {
   const inputRef = useRef("");
   const [score, setScore] = useState(0);
   const [time, setTime] = useState(10);
+
   const changeWord = (e) => {
     if (e.target.value === props.random_word) {
       setScore(score + 1);
