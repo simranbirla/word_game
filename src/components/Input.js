@@ -5,7 +5,9 @@ const Input = (props) => {
   const inputRef = useRef("");
   const [score, setScore] = useState(0);
   const [time, setTime] = useState(10);
-
+  document.onload = () => {
+    inputRef.focus();
+  };
   const changeWord = (e) => {
     if (e.target.value === props.random_word) {
       setScore(score + 1);
@@ -46,6 +48,7 @@ const Input = (props) => {
               onChange={(e) => changeWord(e)}
               ref={inputRef}
               placeholder="Word"
+              autoFocus
             />
           </p>
           <div className="scores">
