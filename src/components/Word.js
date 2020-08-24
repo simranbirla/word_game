@@ -9,16 +9,17 @@ const generateWord = async (word, setWord) => {
   const data = await resposne.json();
   //console.log(data);
   if (data.message) {
-    setWord(data.message);
+    //setWord(data.message);
+    //console.log(data.message);
+    var randomWords = require("random-words");
+    setWord(randomWords());
   }
   //console.log(data.message);
-  setWord(data.word || data.message);
+  setWord(data.word || randomWords());
   return word;
 };
 
 const Word = (props) => {
-  //var randomWords = require("random-words");
-
   //const [random, setRandom] = useState(randomWords());
   const [words, setWords] = useState("");
 

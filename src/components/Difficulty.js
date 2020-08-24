@@ -7,14 +7,14 @@ const Difficulty = (props) => {
 
   window.onload = () => {
     selectRef.current.value = local();
-    console.log(selectRef.current);
+    //console.log(selectRef.current);
     props.setdifficulty(local());
     // console.log(props.setdifficulty(local()));
   };
 
   const changeLevel = (e) => {
     setLevel(e.target.value);
-    console.log(e.target.value);
+    //console.log(e.target.value);
     localStorage.setItem("level", e.target.value);
     props.setdifficulty(e.target.value);
   };
