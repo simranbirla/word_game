@@ -7,7 +7,12 @@ const generateWord = async (word, setWord) => {
     "https://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=-1&api_key=1r4puztkfs6evf77y4iriehwmg2u0sxox2vr2xj8g847m1iep"
   );
   const data = await resposne.json();
-  setWord(data.word);
+  //console.log(data);
+  if (data.message) {
+    setWord(data.message);
+  }
+  //console.log(data.message);
+  setWord(data.word || data.message);
   return word;
 };
 
